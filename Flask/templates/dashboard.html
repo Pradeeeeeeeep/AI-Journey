@@ -72,6 +72,16 @@
         <p>{{course}}</p>
       </div>
     </div>
+    <ul>
+        {% for skill in skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    {% if eligible %}
+        <p>You are eligible for the AIML course!</p>
+    {% else %}
+        <p>You are not eligible for the AIML course.</p>
+    {% endif %}
   </div>
 </body>
 </html>
