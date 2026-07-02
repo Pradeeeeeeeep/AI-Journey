@@ -1,35 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'MY NAME is Pradeep!'
+def home():
+    return render_template('index.html', name = "LORD")
 
 
-@app.route("/about")
-def about():
-    return "I am a software engineer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success. I am skilled in technology and writing code to create systems that are reliable and user-friendly. I am also a quick learner and can adapt to new technologies as they emerge."
-
-
-
-@app.route('/count')
-def count():
-    my_list = ['apple', 'banana', 'cherry', 'date', 'elderberry']
-    return f'The number of items in the list is: {len(my_list)}'
-
-@app.route('/greet/<name>')
-def greet(name):
-    return f'Hello, {name}! Welcome to my Flask app.'
-
-
-@app.route('/square/<int:number>')
-def square(number):
-    return f'The square of {number} is {number ** 2}.'
-
-@app.route('/cube/<int:number>')
-def cube(number):
-    return f'The cube of {number} is {number ** 3}.'
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
