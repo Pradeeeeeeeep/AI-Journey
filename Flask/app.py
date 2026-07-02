@@ -23,5 +23,13 @@ def greet(name):
     return f'Hello, {name}! Welcome to my Flask app.'
 
 
+@app.route('/square/<int:number>')
+def square(number):
+    return f'The square of {number} is {number ** 2}.'
+
+@app.route('/cube/<int:number>')
+def cube(number):
+    return f'The cube of {number} is {number ** 3}.'
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
