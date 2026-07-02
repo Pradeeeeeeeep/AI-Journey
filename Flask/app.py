@@ -18,6 +18,10 @@ def count():
     my_list = ['apple', 'banana', 'cherry', 'date', 'elderberry']
     return f'The number of items in the list is: {len(my_list)}'
 
+@app.route('/greet/<name>')
+def greet(name):
+    return f'Hello, {name}! Welcome to my Flask app.'
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
